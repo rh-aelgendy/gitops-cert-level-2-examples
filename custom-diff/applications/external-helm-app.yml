@@ -20,4 +20,17 @@ spec:
   # Sync policy
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true    
+      - CreateNamespace=true
+  ignoreDifferences:
+  - group: ""
+    jsonPointers:
+    - /data/my-password
+    kind: Secret
+    name: kubedb-operator-apiserver-cert
+    namespace: kubedb
+  - group: apiregistration.k8s.io
+    jsonPointers:
+    - /metadata
+    kind: APIService
+
+
