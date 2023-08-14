@@ -22,6 +22,12 @@ spec:
     syncOptions:
       - CreateNamespace=true    
   ignoreDifferences:
-    - jsonPointers:
+   - jsonPointers:
         - /metadata/annotations/creation
-        - /secrets
+   - group: ""
+    jsonPointers:
+    - /data/my-password
+    kind: Secret
+    name: example-secret
+    namespace: example02
+
