@@ -21,15 +21,3 @@ spec:
   syncPolicy:
     syncOptions:
       - CreateNamespace=true    
-  ignoreDifferences:
-   - kind: APIService
-    group: apiregistration.k8s.io
-    name: v1alpha1.validators.kubedb.com
-    jsonPointers:
-    - /metadata/annotations/creation
-   - group: ""
-     jsonPointers:
-     - /data/my-password
-     kind: Secret
-     name: example-secret
-     namespace: example02
